@@ -1,0 +1,95 @@
+
+:root{
+    --primary-color: rgb(12, 12, 104);
+    --background-color: rgb(216, 236, 243);
+    --border-color: dimgray;
+    --body-margin: 5em;
+}
+
+
+body{
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 200vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+header{
+  background-color: var(--primary-color);
+  color: whitesmoke;
+}
+
+nav{
+    width:100vw;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 var(--body-margin);
+}
+
+textarea{
+    width: 90vw;
+    margin: 2vh 5vw;
+    height: 40vh;
+   
+}
+
+button{
+    background-color: var(--primary-color);
+    color: whitesmoke;
+    border-radius: 3px;
+    font-size: 2em;
+}
+
+.logo{
+    font-size: 3em;
+    padding: .2em;
+}
+
+.stat-label{
+
+}
+
+.stat-value{
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
+
+.visibility-hidden{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.w100{
+    width: 100% !important;
+}
+
+#results{
+    margin: 5px 0;
+    background: white;
+    padding: 10px;
+    line-height: 150%;
+}
+
+#settings-button-row{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+

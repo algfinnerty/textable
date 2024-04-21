@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="style.css" />
+        <link rel="icon" type="image/x-icon" href="/Favicon/favicon-32x32.png">
+        <title>Textible</title>
+    </head>
+    <body>
+        <header id="header">
+            <nav>
+                <div class="logo">
+                    Textible
+                </div>
+                <div>
+                    <button id="open-faq-button">
+                        FAQ
+                    </button>
+                    <button id="open-about-button">
+                        About
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="w100">
+                <h1>Instructions:</h1>
+                <h2>Add text and click the button below to learn more about it's readability</h2>
+                <div id="settings-button-row">
+                    <button id="open-settings-button">Settings</button>
+                    <button id="random-sample-text-button">Use Sample Text</button>
+                </div>
+            </div>
+            <textarea id="input-text" class="w100"></textarea>
+            <button id="analyze-text-button" disabled>Analyze Text</button>
+            <div id="results-container" class="hidden w100">
+                <h3>Results</h3>
+                <div>
+                <h3>Total Document Stats</h3>
+                <label class="stat-label">Total Sentences: <span id="total-sentence-count" class="stat-value">0</span></label>
+                <label class="stat-label">Total Words: <span id="total-word-count" class="stat-value">0</span></label>
+                <label class="stat-label">Total Syallables: <span id="total-syallable-count" class="stat-value">0</span></label>
+                <label class="stat-label">Fleishman-Klein Reading Ease Grade: <span id="total-grade" class="stat-value">0</span></label>
+                <label class="stat-label">Fleishman-Klein Reading Ease Raw Score: <span id="total-fre" class="stat-value">0</span></label>
+                </div>
+                <h4>Select a sentance to view details</h4>
+                <div id="results"></div>
+            </div>
+        </main>
+        <footer></footer>
+        <script src="js/samples.js"></script>
+        <script src="js/sentence.js"></script>
+        <script src="js/sentenceparser.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

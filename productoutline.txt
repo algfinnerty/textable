@@ -1,0 +1,48 @@
+
+Detail sentence analysis sidebar for sentances ✅
+
+Paraphraph Support
+Sidebar analysis for paragraphs
+
+Disable anaylze button until text is entered ✅
+
+Support for pasted text ✅
+Support for typed text ✅
+Support for sample text ✅
+
+Statistics Hover on Specfic Sentences ✅
+Detailed Statistics Modal on Sentances ✅
+Identify Longest Words ✅
+Scroll to Results Section ✅
+Scroll back to header on page reload ✅
+
+Show all examples
+Let examples be chosen
+Minimum five examples
+Do not repeat examples
+
+Favicon ✅
+
+Finish Basic Readme
+
+Remove all useless console.logs ✅
+
+^ MVP
+
+
+
+Basic User Preferences for analysis function
+
+Modal Functionality
+FAQ Modal
+About Modal
+
+Editing analyzed text without requiring reanalysis
+
+^ V2
+
+Progress bar for analyze button
+
+
+
+^ V3

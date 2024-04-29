@@ -1,0 +1,1 @@
+const about = '<p>This website was designed as part of the Professional Technical Writing program at the University of Washington.</p>'

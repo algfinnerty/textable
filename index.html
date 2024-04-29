@@ -5,52 +5,122 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/x-icon" href="/Favicon/favicon-32x32.png">
-        <title>Textible</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Textable</title>
     </head>
     <body>
         <header id="header">
             <nav>
-                <div class="logo">
-                    Textible
-                </div>
-                <div>
-                    <button id="open-faq-button">
-                        FAQ
-                    </button>
-                    <button id="open-about-button">
-                        About
-                    </button>
+                <div id="logo">
+                    Texplanation
                 </div>
             </nav>
         </header>
         <main>
-            <div class="w100">
-                <h1>Instructions:</h1>
-                <h2>Add text and click the button below to learn more about it's readability</h2>
-                <div id="settings-button-row">
-                    <button id="open-settings-button">Settings</button>
-                    <button id="random-sample-text-button">Use Sample Text</button>
+            <section id="AnalyzeSection" aria-label="Analyze Text" class="w100">
+                <div >
+                    <h2>Instructions:</h2>
+                    <p>Add your text below, then click Analyze Text to learn about it's readability</p>
+                    <div class="row right"><button id="random-sample-text-button" class="underline-button">Try a random example <i id="settings-arrow" class="fa fa fa-arrow-circle-down"></i></button></div>
+                    <div class="row right"><a href="#AboutSection" class="underline-button">Learn more about readability <i id="settings-arrow" class="fa fa fa-arrow-circle-right"></i></a></div>
                 </div>
-            </div>
-            <textarea id="input-text" class="w100"></textarea>
-            <button id="analyze-text-button" disabled>Analyze Text</button>
-            <div id="results-container" class="hidden w100">
-                <h3>Results</h3>
+                
+                <button hidden id="open-settings-button">Settings <i id="settings-arrow" class="fa fa-chevron-down"></i></button>
+                <div aria-label="Settings" id="settings">
+                    <label hidden>Target Sentance Length <input id="targent-sentance-count-input" type="range" min="5" max="20"/></label>
+                    <label hidden>Count Syllables <input id="count-syllables-input" type="checkbox"/></label>
+                    <label hidden>Fleishmen Reading Ease Raw Score <input id="raw-score-input" type="checkbox"/></label>
+                    <label hidden>Show Longest Words <input id="show-longest-words" type="checkbox"/></label>
+                </div>
+                <textarea id="input-text"></textarea>
+                <div class="row">
+                    <div class="third"></div>
+                    <div class="third center">
+                            <button id="analyze-text-button" disabled>Analyze Text</button>
+                    </div>
+                    <div class="third">
+                        <button id="clear-text-button" class="underline-button">Clear <i id="settings-arrow" class="fa fa-times-circle"></i></button>
+                    </div> 
+                </div>
+            </section>
+            
+            <section id="results-container" class="hidden">
+                <h2 id="results-header">Results</h2>
                 <div>
-                <h3>Total Document Stats</h3>
-                <label class="stat-label">Total Sentences: <span id="total-sentence-count" class="stat-value">0</span></label>
-                <label class="stat-label">Total Words: <span id="total-word-count" class="stat-value">0</span></label>
-                <label class="stat-label">Total Syallables: <span id="total-syallable-count" class="stat-value">0</span></label>
-                <label class="stat-label">Fleishman-Klein Reading Ease Grade: <span id="total-grade" class="stat-value">0</span></label>
-                <label class="stat-label">Fleishman-Klein Reading Ease Raw Score: <span id="total-fre" class="stat-value">0</span></label>
+                   <fieldset>
+                        <legend>Statistics</legend>
+                        <label class="stat-label">Total Paragraphs: <span id="total-para-count" class="stat-value">0</span></label>
+                        <label class="stat-label">Total Sentences: <span id="total-sentence-count" class="stat-value">0</span></label>
+                        <label class="stat-label">Total Words: <span id="total-word-count" class="stat-value">0</span></label>
+                        <label class="stat-label">Total Syallables: <span id="total-syallable-count" class="stat-value">0</span></label>
+                        <label class="stat-label">Avg. Sentences Per Paragraph: <span id="total-sentence-per-para" class="stat-value">0</span></label>
+                        <label class="stat-label">Avg. Words Per Sentence: <span id="total-words-per-sentence" class="stat-value">0</span></label>
+                   </fieldset>
+                    <fieldset>
+                        <legend>Reading Ease</legend>
+                        <label class="stat-label">Fleishman-Klein Reading Ease Grade: <span id="total-grade" class="stat-value">0</span></label>
+                        <label class="stat-label">Fleishman-Klein Reading Ease Raw Score: <span id="total-fre" class="stat-value">0</span></label>
+                    </fieldset>
+                   
                 </div>
                 <h4>Select a sentance to view details</h4>
                 <div id="results"></div>
-            </div>
+                <div class="row right">
+                    <a id="edit-and-reanalyze" href="#logo">Edit and Reanalyze <i id="settings-arrow" class="fa fa fa-arrow-circle-up"></i></a>
+                </div>
+            </section>
+            <section>
+                <h2 id="AboutSection">About</h2>
+                <p>Textable show how readible text is -- broken down sentence by sentence, so you know where it can be improved. Statstics can be displayed by sentence or by paragraph (if it is longer than one paragraph).</p>
+                <p>Some of the information it provides includes:</p>
+                <ul>
+                    <li>
+                        <label>
+                            Number of Words
+                        </label>
+                        <p>
+                            This readability formula assesses the approximate difficulty of a text based on average sentence length and numer of syllables.
+                        </p>
+                    </li>
+                    <li>
+                        <label>
+                            Flesch-Kincaid Readability
+                        </label>
+                        <p>
+                            This readability formula assesses the approximate difficulty of a text based on average sentence length and numer of syllables.
+                        </p>
+                    </li>
+                    <li>
+                        <label>
+                            Flesch-Kincaid Grade Level
+                        </label>
+                        <p>
+                            The Flesch-Kincaid Grade Level is a readability formula that assesses the approximate reading grade level of a text, based on average sentence length and word complexity. It produces scores corresponding to US grade levels:
+                        </p>
+                    </li>
+                </ul>
+                <p>You can also test one of the <a href="#examples">example texts</a></p>
+            </section>
+            <section id="ExampleSection" aria-label="Examples">
+                <h2 id="examples">Examples</h2>
+                <div id="examples-container"></div>
+            </section>
+            
+            <div id="background" hidden></div>
+            <aside hidden>
+                <header id="aside-header">
+                    <div>
+                        <button class="transparent-button" id="close-aside-button">X</button>
+                    </div>
+                </header>
+                <main id="aside-content">
+                </main>
+            </aside>
         </main>
         <footer></footer>
         <script src="js/samples.js"></script>
         <script src="js/sentence.js"></script>
+        <script src="js/paragraph.js"></script>
         <script src="js/sentenceparser.js"></script>
         <script src="js/main.js"></script>
     </body>
